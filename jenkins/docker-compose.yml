@@ -1,0 +1,17 @@
+# Local Jenkins server:  cd jenkins && docker compose up -d --build   ->  http://localhost:8080
+services:
+  jenkins:
+    build: .
+    container_name: jenkins
+    # root only so the container can use /var/run/docker.sock on Docker Desktop (local setup only)
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:

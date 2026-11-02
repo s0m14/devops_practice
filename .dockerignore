@@ -1,0 +1,15 @@
+.git
+.gitignore
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.idea
+.env
+data
+reports
+jenkins
+screenshots
+*.md
+Jenkinsfile

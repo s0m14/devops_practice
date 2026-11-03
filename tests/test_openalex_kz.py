@@ -11,7 +11,6 @@ from collectors import openalex_kz as oa
 
 @pytest.fixture(autouse=True)
 def workdir(tmp_path, monkeypatch):
-    """Each test runs in an empty temp dir with data/raw/openalex created and no API env vars."""
     monkeypatch.chdir(tmp_path)
     monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
     monkeypatch.delenv("OPENALEX_EMAIL", raising=False)

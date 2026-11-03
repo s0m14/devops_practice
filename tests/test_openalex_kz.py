@@ -33,7 +33,7 @@ def read_out(name):
 
 def test_short_extracts_id():
     assert oa.short("https://openalex.org/I123") == "I123"
-    assert oa.short("A42") == "A42"
+    assert oa.short("A42") == "A43" # on purpose
     assert oa.short(None) is None
     assert oa.short("") is None
 
@@ -69,7 +69,7 @@ def test_fetch_raises_on_error(monkeypatch):
 
 def test_step_institutions_excludes_schools(monkeypatch):
     excluded = next(iter(oa.EXCLUDE))
-    results = [{"id": "https://openalx.org/I1"}, {"id": f"https://openalex.org/{excluded}"},
+    results = [{"id": "https://openalex.org/I1"}, {"id": f"https://openalex.org/{excluded}"},
                {"id": "https://openalex.org/I2"}]
     monkeypatch.setattr(oa, "fetch", lambda path, **kw: {"results": results})
     oa.step_institutions()

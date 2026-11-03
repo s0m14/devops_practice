@@ -1,5 +1,3 @@
-// CI pipeline for collectors/openalex_kz.py
-// Every commit -> unit tests (in Docker) -> build runtime Docker image -> smoke test of the image.
 pipeline {
     agent any
 
@@ -10,8 +8,8 @@ pipeline {
     }
 
     triggers {
-        githubPush()                 // instant build on push if a GitHub webhook reaches Jenkins
-        pollSCM('H/2 * * * *')       // fallback for local Jenkins without a public URL
+        githubPush()
+        pollSCM('H/2 * * * *')
     }
 
     environment {

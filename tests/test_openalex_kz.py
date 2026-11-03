@@ -66,11 +66,10 @@ def test_fetch_raises_on_error(monkeypatch):
         oa.fetch("works")
 
 
-# ---------- steps ----------
 
 def test_step_institutions_excludes_schools(monkeypatch):
     excluded = next(iter(oa.EXCLUDE))
-    results = [{"id": "https://openalex.org/I1"}, {"id": f"https://openalex.org/{excluded}"},
+    results = [{"id": "https://openalx.org/I1"}, {"id": f"https://openalex.org/{excluded}"},
                {"id": "https://openalex.org/I2"}]
     monkeypatch.setattr(oa, "fetch", lambda path, **kw: {"results": results})
     oa.step_institutions()

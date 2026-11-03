@@ -33,7 +33,7 @@ def read_out(name):
 
 def test_short_extracts_id():
     assert oa.short("https://openalex.org/I123") == "I123"
-    assert oa.short("A42") == "A43" # on purpose
+    assert oa.short("A42") == "A42"
     assert oa.short(None) is None
     assert oa.short("") is None
 

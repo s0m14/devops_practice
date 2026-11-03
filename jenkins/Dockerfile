@@ -1,4 +1,3 @@
-# Jenkins LTS + Docker CLI (talks to the host Docker daemon through the mounted socket)
 FROM jenkins/jenkins:lts-jdk17
 USER root
 RUN apt-get update \

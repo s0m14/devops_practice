@@ -1,15 +1,3 @@
-"""
-OpenAlex: все публикации 2020–2026, где хотя бы один автор аффилирован с казахстанским вузом,
-и профили этих авторов.
-
-Шаги (каждый можно перезапускать — продолжит с места остановки):
-    python -m collectors.openalex_kz institutions
-    python -m collectors.openalex_kz works
-    python -m collectors.openalex_kz authors      # нужен OPENALEX_API_KEY в .env (лимит без ключа ~1000 запросов/день)
-
-Вуз = организация OpenAlex с country_code=KZ и type=education, кроме EXCLUDE (школы и НИИ).
-"""
-
 import json
 import os
 import sys
